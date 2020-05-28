@@ -1,0 +1,21 @@
+.dashboad-container {
+    padding-left: 30px;
+    margin-left: 30px;
+    
+  }
+
+.grid-container {
+  margin: 0;
+  padding: 10px;
+}
+
+.grid {
+  margin: 0;
+}
+
+.paper {
+  padding: 20px;
+  text-align: center;
+  opacity: 0.6;
+  background-image:none
+}
