@@ -1,6 +1,9 @@
 <div align="center">
     <img alt="Logo" title="#logo" width="200px" src=".github/icon.png">
 </div>
+<div align="center">
+    <span style="font-size: 14px; color: #888888; padding-top: 8px; align:center">versão 1.0.0</span>
+</div>
 
 </br></br>
 # Kindernote - Projeto Aplicado - IGTI
