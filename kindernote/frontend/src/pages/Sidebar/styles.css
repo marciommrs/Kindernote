@@ -1,41 +1,66 @@
-.sidebar-conteiner {
-    background-color: #92e5ef;
-}
-
-.drawer {
-    width: 240px;
-    flex-shrink: 0;
-    opacity: 0.6;
+.sidebar-container {
+  height: 100vh;
+  width: 20%;
+  /* border: 1px black solid */
 }
 
 .toolbarIcon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 8px;
-    min-height: 64px;
-  }
-
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  position: relative;
+  top: 20px;
+  right: 20px;
+}
 .toolbarIcon img {
   height: 80px;
-  border-radius: 50%;
-  padding: 10px;
+  border-radius: 50%; 
+  opacity: 0.9; 
+}
+
+.toolbarIcon span {
+  font-size: 14px;
+  color: #888888;
+  padding-top: 8px;
 }
 
 .logoIcon {
   display: flex; 
   flex-direction: column; 
-  flex-wrap: wrap;  
   align-items: center;
-  justify-content: center;
-  padding: 30px 8px;
   font-size: 0;
+
+  position: relative;
+  top: 440px;
+  right: 24px;
 }
 
 .logoIcon img {
-  height: 120px;
+  height: 80px;
+  opacity: 0.8;
 }
 
 .logoIcon span {
   font-size: 10px;;
+}
+
+
+.sidebar-list {
+  top: 125px;
+}
+
+.drawer {    
+    width: 240px;
+    flex-shrink: 0;
+    opacity: 0.6;
+}
+
+.nav-item {
+  text-decoration: none;  
+  color: inherit;
+  background: transparent;
+}
+
+.nav-item:hover:focus:visited {
+  color: whiteColor;
 }

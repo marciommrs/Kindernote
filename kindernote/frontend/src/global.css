@@ -1,2 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+body {
+  background-image: url('../src/assets/kindernote-background.jpeg');
+  background-size: 100% 100vh;
+}
+
+.app-container {
+  height: 100vh;
+  margin: 0;
+  padding: 0;  
+  display: flex;
+  border: 1px green solid
+}
