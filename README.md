@@ -1,13 +1,12 @@
 <h3 align="center">
-    <img alt="Logo" title="#logo" width="300px" src="https://images.unsplash.com/photo-1586281380614-bf2205048318?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
+    <img alt="Logo" title="#logo" width="300px" src=".github/icon.png">
     <br><br>
-    <b>Agenda</b>  
     <br>
 </h3>
 
 
 </br></br>
-# Trabalho prático - IGTI
+# Kindernote - Projeto Aplicado - IGTI
 
 Projeto: Kindernote<br/>
 Descrição: Agenda escolar infantil.
