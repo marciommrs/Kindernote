@@ -6,8 +6,9 @@
 </div>
 
 </br></br>
+<div align="center">
 # Kindernote - Projeto Aplicado - IGTI
-
+</div>
 Projeto: Kindernote<br/>
 Descrição: Agenda escolar infantil.
 
