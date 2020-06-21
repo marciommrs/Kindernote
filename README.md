@@ -1,9 +1,6 @@
-<h3 align="center">
-    <img alt="Logo" title="#logo" width="300px" src=".github/icon.png">
-    <br><br>
-    <br>
-</h3>
-
+<div align="center">
+    <img alt="Logo" title="#logo" width="200px" src=".github/icon.png">
+</div>
 
 </br></br>
 # Kindernote - Projeto Aplicado - IGTI
