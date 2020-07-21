@@ -13,7 +13,7 @@ export default function Dropzone(props) {
     const fileUrl = URL.createObjectURL(file);
     SetSelectedFileUrl(fileUrl);
     props.onFileUploaded(file);
-  }, [props.onFileUploaded])
+  }, [props])
   const {getRootProps, getInputProps} = useDropzone({
     onDrop,
     accept: 'image/*'

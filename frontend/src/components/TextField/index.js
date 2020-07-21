@@ -1,6 +1,8 @@
 import React from 'react';
 import MaterialTextField from '@material-ui/core/TextField';
 
+import './styles.css';
+
 export default function TextField(props) {
 
   return (
@@ -8,7 +10,10 @@ export default function TextField(props) {
       <MaterialTextField 
           id={props.id}
           label={props.label}
-          variant="outlined"/>
+          variant="outlined"
+          value={props.value}
+          onChange={props.onChange}
+          disabled={props.disabled}/>
     </>
   );
 }

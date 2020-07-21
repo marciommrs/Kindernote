@@ -3,8 +3,8 @@ import MaterialTextField from '@material-ui/core/TextField';
 
 import './styles.css';
 
-export default function TextField(props) {
-  const height = 100;
+export default function TextArea(props) {
+  //const height = props.height;
 
   return (
     <>
@@ -12,11 +12,14 @@ export default function TextField(props) {
           id={props.id}
           label={props.label}
           variant="outlined" 
-          InputProps={{
-            style: {
-              height,
-            },
-          }}
+          // InputProps={{
+          //   style: {
+          //     height,
+          //   },
+          // }}
+          value={props.value}
+          onChange={props.onChange}
+          rows={4}
           multiline />
     </>
   );

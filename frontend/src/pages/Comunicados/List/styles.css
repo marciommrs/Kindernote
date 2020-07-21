@@ -1,0 +1,45 @@
+.dashboad-container {
+  height: 100vh;
+  width: 80%;
+  margin: 0;
+  padding: 10px;
+  /* border: 1px black solid; */
+}
+
+.container {
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  /* border: 1px black solid; */
+}
+
+.container h1 {
+  font-size: 30px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+  opacity: 0.67;
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.container button {
+  margin: auto;
+  background-color: #2ec5e6;
+}
+
+.header-comunicado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.header-icon {
+  cursor: 'pointer'; 
+  color: #2ec5e6;
+}

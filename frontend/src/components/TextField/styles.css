@@ -1,9 +1,9 @@
-textarea {
-  margin: 10px 5px 0px 10px;
+.container form input {
+  background-color: white;
+  padding: 10px 10px;
 }
 
-.MuiOutlinedInput-multiline {
-  background-color: white;
+.MuiOutlinedInput-input {
   padding: 10px 10px;
 }
 
@@ -11,9 +11,6 @@ textarea {
   transform: translate(10px, 10px) scale(1);
 }
 
-
 .makeStyles-root-1 > * {
-  width: 80ch;
   margin: 3px;
-  margin-left: 160px;
 }
