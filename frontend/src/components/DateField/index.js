@@ -3,26 +3,21 @@ import MaterialTextField from '@material-ui/core/TextField';
 
 import './styles.css';
 
-export default function TextArea(props) {
-  //const height = props.height;
+export default function DateField(props) {
 
   return (
     <>
       <MaterialTextField 
           id={props.id}
           label={props.label}
-          variant="outlined" 
+          variant="outlined"
           value={props.value}
           onChange={props.onChange}
           disabled={props.disabled}
-          rows={4}
-          multiline 
+          type="date"
           InputLabelProps={{
             shrink: true,
-            //style: {
-            //height,
-            //   },
-        }}/>
+          }}/>
     </>
   );
 }

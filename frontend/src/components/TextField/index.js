@@ -13,7 +13,11 @@ export default function TextField(props) {
           variant="outlined"
           value={props.value}
           onChange={props.onChange}
-          disabled={props.disabled}/>
+          disabled={props.disabled}
+          type={props.type}
+          InputLabelProps={{
+            shrink: true,
+          }}/>
     </>
   );
 }

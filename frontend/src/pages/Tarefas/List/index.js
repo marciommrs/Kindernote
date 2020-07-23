@@ -22,80 +22,85 @@ import api from '../../../services/api';
 
 import './styles.css';
 
-
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
   },
 });
 
-export default function Comunicados() {
+export default function Tarefas() {
   const history = useHistory();
   const classes = useStyles();
-  const [comunicados, setComunicados] = useState([]);
+  const [tarefas, setTarefas] = useState([]);
 
   useEffect(() => {
-    api.get('/comunicados')
+    api.get('/tarefas')
       .then(response => {
-        setComunicados(response.data);
-      });
+        setTarefas(response.data);
+      })
   }, []);
 
-  async function handleDeleteComunicado(id) {
+  async function handleDelete(id) {
     try {
-      await api.delete(`/comunicados/${id}`);
-      setComunicados(comunicados.filter(comunicado => comunicado.id !== id));
-      NotificationManager.info('Comunicado excluído!');
+      await api.delete(`/tarefas/${id}`);
+      setTarefas(tarefas.filter(tarefa => tarefa.id !== id));
+      NotificationManager.info('Tarefa excluída!');
     } catch(err) {
-      alert('Erro ao deletar comunicado, tente novamente.')
+      alert('Erro ao excluir a tarefa, tente novamente.')
     }
   }
 
-  function handleAddComunicado() {
-    history.push("/addComunicado/");
+  function handleAdd() {
+    history.push("/addTarefa/");
   }
 
-  function handleEditComunicado(id) {
-    history.push("/editComunicado/", {id: id});
+  function handleEdit(id) {
+    history.push("/editTarefa/", {id: id});
   }
 
-  function handleViewComunicado(id) {
-    history.push("/viewComunicado/", {id: id, readOnly: true});
+  function handleView(id) {
+    history.push("/viewTarefa/", {id: id, readOnly: true});
   }
 
   return (
         <>
           <div className="header-comunicado">
-            <h1>Comunicados</h1>
+            <h1>Tarefas</h1>
             <AddCircleOutlineIcon
               className="header-icon"  
               fontSize="large"
-              onClick={() => handleAddComunicado()}/>
+              onClick={() => handleAdd()}/>
           </div>
           <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell>Assunto</TableCell>
-                  <TableCell>Descrição</TableCell>
+                  <TableCell>Professor</TableCell>
+                  <TableCell>Turma</TableCell>
+                  <TableCell>Data</TableCell>
+                  <TableCell>Matéria</TableCell>
+                  <TableCell>Tema</TableCell>
                   <TableCell></TableCell>
                   <TableCell></TableCell>
-                  <TableCell></TableCell> 
+                  <TableCell></TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                {comunicados.map((comunicado) => (
-                  <TableRow key={comunicado.id}>
-                    <TableCell component="th" scope="row">{comunicado.assunto}</TableCell>
-                    <TableCell>{comunicado.descricao}</TableCell>
+                {tarefas.map((tarefa) => (
+                  <TableRow key={tarefa.id}>
+                    <TableCell component="th" scope="row">{tarefa.professor_nome}</TableCell>
+                    <TableCell>{tarefa.turma_descricao}</TableCell>
+                    <TableCell>{tarefa.data_str}</TableCell>
+                    <TableCell>{tarefa.materia_descricao}</TableCell>
+                    <TableCell>{tarefa.tema}</TableCell>
                     <TableCell>
-                        <EditIcon onClick={() => handleEditComunicado(comunicado.id)} className="header-icon" />
+                        <EditIcon onClick={() => handleEdit(tarefa.id)} className="header-icon" />
                     </TableCell>
                     <TableCell>
-                        <DeleteForeverIcon onClick={() => handleDeleteComunicado(comunicado.id)} className="header-icon" />
+                        <DeleteForeverIcon onClick={() => handleDelete(tarefa.id)} className="header-icon" />
                     </TableCell>
                     <TableCell>
-                        <FindInPageIcon onClick={() => handleViewComunicado(comunicado.id)} className="header-icon" />
+                        <FindInPageIcon onClick={() => handleView(tarefa.id)} className="header-icon" />
                     </TableCell>
                   </TableRow>
                 ))}

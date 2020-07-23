@@ -1,0 +1,18 @@
+textarea {
+  margin: 10px 5px 0px 10px;
+}
+
+.MuiOutlinedInput-multiline {
+  background-color: white;
+  padding: 10px 10px;
+}
+
+.MuiInputLabel-outlined {
+  transform: translate(10px, 10px) scale(1);
+}
+
+.makeStyles-root-1 > * {
+  width: 80ch;
+  margin: 3px;
+  margin-left: 160px;
+}

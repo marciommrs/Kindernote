@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 
+//Components
+import Button from '@material-ui/core/Button';
 import TextField from '../../../components/TextField';
 import TextArea from '../../../components/TextArea';
+import DateField from '../../../components/DateField';
 
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
@@ -15,6 +17,7 @@ import 'react-notifications/lib/notifications.css';
 //Api backend
 import api from '../../../services/api';
 
+//Styles
 import './styles.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -38,22 +41,15 @@ export default function AvisosEdit(props) {
   const classes = useStyles();
 
   const [tipo, setTipo] = useState('');
+  const [data, setData] = useState('');
   const [descricao, setDescricao] = useState('');
   const [professor, setProfessor] = useState('');
 
   const avisoId = props.location.state?.id;
-  const editAviso = props.location.state?.editAviso;
-  const addAviso = props.location.state?.addAviso;
-
-  console.log(props.location);
-
+  const readOnly = props.location.state?.readOnly;
 
   useEffect(loadAviso, [avisoId]);
 
-  function isEdit() {
-    return editAviso || addAviso;
-  }
-  
   function loadAviso() {
     if (avisoId) {
       api
@@ -110,26 +106,32 @@ export default function AvisosEdit(props) {
               label="Tipo"
               value={tipo}
               onChange={e => setTipo(e.target.value)}
-              disabled={!isEdit()}/>
+              disabled={readOnly}/>
+            <DateField 
+              id="data-id" 
+              label="Data"
+              value={data}
+              onChange={e => setData(e.target.value)}
+              disabled={readOnly}/>
             <TextArea 
               id="descricao-id" 
               label="Descrição" 
               height={150}
               value={descricao}
               onChange={e => setDescricao(e.target.value)}
-              disabled={!isEdit()}/>
+              disabled={readOnly}/>
             <TextField 
               id="professor-id" 
               label="Professor"
               value={professor}
               onChange={e => setProfessor(e.target.value)}
-              disabled={!isEdit()}/>
+              disabled={readOnly}/>
             <Button 
               type="submit" 
               className={classes.btn} 
               variant="contained" 
               color="primary"
-              disabled={!isEdit()}>
+              disabled={readOnly}>
                 Salvar
             </Button>
           </form>

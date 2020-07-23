@@ -7,7 +7,7 @@ import ComunicadosList from './pages/Comunicados/List';
 import ComunicadosEdit from './pages/Comunicados/Edit';
 import AvisosList from './pages/Avisos/List';
 import AvisosEdit from './pages/Avisos/Edit';
-import Tarefas from './pages/Tarefas';
+import Tarefas from './pages/Tarefas/List';
 import Recados from './pages/Recados';
 
 export default function Routes() {
@@ -17,12 +17,10 @@ export default function Routes() {
             <Route path="/perfil" component={Perfil} />
 
             <Route path="/comunicados" component={ComunicadosList} />
-            <Route path="/addComunicado" component={ComunicadosEdit} />
-            <Route path="/editComunicado" component={ComunicadosEdit} />
+            <Route path="/*Comunicado" component={ComunicadosEdit} />
 
             <Route path="/avisos" component={AvisosList} />
-            <Route path="/addAviso" component={AvisosEdit} />
-            <Route path="/editAviso" component={AvisosEdit} />
+            <Route path="/*Aviso" component={AvisosEdit} />
             
             <Route path="/tarefas" component={Tarefas} />
             <Route path="/Recados" component={Recados} />

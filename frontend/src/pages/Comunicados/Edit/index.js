@@ -47,8 +47,9 @@ export default function ComunicadosEdit(props) {
   const [assunto, setAssunto] = useState('');
   const [descricao, setDescricao] = useState('');
 
+  const comunicadoId = props.location.state?.id;
+  const readOnly = props.location.state?.readOnly;
   
-  const comunicadoId = props.match.params.id;
   useEffect(loadComunicado, [comunicadoId]);
   
   function loadComunicado() {
@@ -104,14 +105,18 @@ export default function ComunicadosEdit(props) {
               id="title-id" 
               label="Assunto" 
               value={assunto}
-              onChange={e => setAssunto(e.target.value)}/>
+              onChange={e => setAssunto(e.target.value)}
+              disabled={readOnly}/>
             <TextArea 
               id="info-id"
               label="Informativo"
               height={100}
               value={descricao}
-              onChange={e => setDescricao(e.target.value)}/>
-            <Dropzone onFileUploaded={setSelectedFile} />
+              onChange={e => setDescricao(e.target.value)}
+              disabled={readOnly}/>
+            <Dropzone 
+              onFileUploaded={setSelectedFile} 
+              disabled={readOnly}/>
             <Button type="submit" className={classes.btn} variant="contained" color="primary">Salvar</Button>
           </form>
         </>

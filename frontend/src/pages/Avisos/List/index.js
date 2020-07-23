@@ -51,15 +51,15 @@ export default function Avisos() {
   }
 
   function handleAddAviso() {
-    history.push("/addAviso/", {addAviso: true});
+    history.push("/addAviso/");
   }
 
   function handleEditAviso(id) {
-    history.push("/editAviso/", {id: id, editAviso: true});
+    history.push("/editAviso/", {id: id});
   }
 
   function handleViewAviso(id) {
-    history.push("/editAviso/", {id: id, editAviso: false});
+    history.push("/viewAviso/", {id: id, readOnly: true});
   }
 
   return (
