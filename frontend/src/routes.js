@@ -7,7 +7,8 @@ import ComunicadosList from './pages/Comunicados/List';
 import ComunicadosEdit from './pages/Comunicados/Edit';
 import AvisosList from './pages/Avisos/List';
 import AvisosEdit from './pages/Avisos/Edit';
-import Tarefas from './pages/Tarefas/List';
+import TarefasList from './pages/Tarefas/List';
+import TarefasEdit from './pages/Tarefas/Edit';
 import Recados from './pages/Recados';
 
 export default function Routes() {
@@ -22,7 +23,9 @@ export default function Routes() {
             <Route path="/avisos" component={AvisosList} />
             <Route path="/*Aviso" component={AvisosEdit} />
             
-            <Route path="/tarefas" component={Tarefas} />
+            <Route path="/tarefas" component={TarefasList} />
+            <Route path="/*Tarefa" component={TarefasEdit} />
+
             <Route path="/Recados" component={Recados} />
         </Switch>
     );

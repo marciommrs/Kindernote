@@ -4,7 +4,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
-//import './styles.css';
+import './styles.css';
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
@@ -22,20 +22,23 @@ export default function SelectField(props) {
   return (
     <>
       <FormControl variant="outlined" className={classes.formControl}>
-          <InputLabel htmlFor="outlined-age-native-simple">Age</InputLabel>
+          <InputLabel 
+            htmlFor={props.id}
+            shrink={true}>
+            {props.label}
+          </InputLabel>
           <Select
             native
+            id={props.id}
             value={props.value}
             onChange={props.onChange}
             label={props.label}
-            inputProps={{
-              name: props.name,
-              id: props.id,
-            }}
+            variant="outlined"
+            disabled={props.disabled}
           >
             <option aria-label="None" value="" />
-            {props.options.map((item) => (
-              <option value={item.id}>{item.name}</option>
+            {props.options?.map((item) => (
+              <option value={item.id} key={item.id}>{item.name}</option>
             ))}
           </Select>
         </FormControl>

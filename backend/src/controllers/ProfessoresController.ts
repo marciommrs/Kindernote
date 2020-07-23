@@ -10,7 +10,11 @@ class ProfessoresController {
   }
 
   async list(request: Request, response: Response) {
-    return response.json(itens);
+    const itensFullLoad = itens.map(item => {
+      return {...item, tratamento_nome: `${item.tratamento} ${item.nome}`};
+    })
+
+    return response.json(itensFullLoad);
   }
 
   async find(request: Request, response: Response) {
@@ -23,8 +27,10 @@ class ProfessoresController {
     const data = request.body;
     const item = {
       id: ++indice,
-      nome: data.nome,
-      turmas_id: data.turma_id
+      ...data
+      // nome: data.nome,
+      // tratamento: data.tratemento,
+      // turmas_id: data.turma_id
     };
     itens.push(item);
     return response.json(item);

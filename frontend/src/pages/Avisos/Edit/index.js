@@ -62,7 +62,7 @@ export default function AvisosEdit(props) {
     }
   }
 
-  async function handleNewAviso(e) {
+  async function handleNew(e) {
     e.preventDefault();
 
     const data = {
@@ -100,7 +100,7 @@ export default function AvisosEdit(props) {
               fontSize="large"
               onClick={() => navigate("/avisos")}/>
           </div>
-          <form className={classes.root} noValidate autoComplete="off" onSubmit={handleNewAviso}>
+          <form className={classes.root} noValidate autoComplete="off" onSubmit={handleNew}>
             <TextField 
               id="tipo-id" 
               label="Tipo"

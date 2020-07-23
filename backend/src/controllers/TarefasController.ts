@@ -41,6 +41,7 @@ class TarefasController {
         professor_nome: professor?.nome,
         turma_descricao: turma?.descricao,
         materia_descricao: materia?.descricao,
+        data_input: DateFormater.getFormattedDateInput(loaded.data),
       }
     }
 
@@ -49,13 +50,16 @@ class TarefasController {
 
   async insert(request: Request, response: Response) {
     const data = request.body;
+
     const tarefa = {
       id: ++indice,
-      professor_id: data.professor_id,
-      turma_id: data.turma_id,
-      data: data.data,
-      materia_id: data.materia_id,
-      tema: data
+      ...data
+      // professor_id: data.professor_id,
+      // turma_id: data.turma_id,
+      // data: data.data,
+      // materia_id: data.materia_id,
+      // tema: data,
+      // descricao: data.descricao
     };
     tarefas.push(tarefa);
     return response.json(tarefa);

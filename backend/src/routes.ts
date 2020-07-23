@@ -2,6 +2,9 @@ import express from 'express';
 import ComunicadosController from './controllers/ComunicadosController';
 import AvisosController from './controllers/AvisosController';
 import TarefasController from './controllers/TarefasController';
+import TurmasController from './controllers/TurmasController';
+import ProfessoresController from './controllers/ProfessoresController';
+import MateriasController from './controllers/MateriasController';
 
 const routes = express.Router();
 
@@ -25,5 +28,14 @@ routes.get('/tarefas/:id', tarefasController.find);
 routes.post('/tarefas', tarefasController.insert);
 routes.delete('/tarefas/:id', tarefasController.delete);
 routes.put('/tarefas/:id', tarefasController.update);
+
+const turmasController = new TurmasController();
+routes.get('/turmas', turmasController.list);
+
+const professoresController = new ProfessoresController();
+routes.get('/professores', professoresController.list);
+
+const materiasController = new MateriasController();
+routes.get('/materias', materiasController.list);
 
 export default routes;

@@ -5,6 +5,7 @@ export interface Tarefa {
   data: Date,
   materia_id: number,
   tema: string,
+  descricao: string
   [others: string]: any
 }
 
@@ -15,7 +16,8 @@ const tarefas = <Tarefa[]>[
     turma_id: 1,
     data: new Date(2020,7,22),
     materia_id: 1,
-    tema: 'Vogais'
+    tema: 'Vogais',
+    descricao: 'Exercícios das páginas 31 e 31.'
   },
   {
     id: 2,
@@ -23,7 +25,8 @@ const tarefas = <Tarefa[]>[
     turma_id: 2,
     data: new Date(2020,7,22),
     materia_id: 2,
-    tema: 'Números até 10'
+    tema: 'Números até 10',
+    descricao: 'Folha de tarefas enviada na pasta.'
   }
   
 ];
