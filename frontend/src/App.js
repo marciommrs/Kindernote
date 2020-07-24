@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import './reset.css'
 import './global.css'
@@ -11,10 +11,14 @@ import Dashboard from './pages/Dashboard';
 function App() {
   return (
     <BrowserRouter>
-        <div className="app-container">
-            <Sidebar />
-            <Dashboard />
-        </div>
+        <Switch>
+        <Route path="/login" exact component={() => <h1>LOGIN</h1>} />
+          <div className="app-container">
+              <Sidebar />
+              <Dashboard />
+          </div>
+
+        </Switch>
     </BrowserRouter>
   );
 }

@@ -36,23 +36,12 @@ export default function SelectField(props) {
             variant="outlined"
             disabled={props.disabled}
           >
-            <option aria-label="None" value="" />
+            <option aria-label="None" value="-1" />
             {props.options?.map((item) => (
               <option value={item.id} key={item.id}>{item.name}</option>
             ))}
           </Select>
         </FormControl>
-      {/* <MaterialTextField 
-          id={props.id}
-          label={props.label}
-          variant="outlined"
-          value={props.value}
-          onChange={props.onChange}
-          disabled={props.disabled}
-          type={props.type}
-          InputLabelProps={{
-            shrink: true,
-          }}/> */}
     </>
   );
 }

@@ -7,8 +7,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '../../../components/TextField';
 import TextArea from '../../../components/TextArea';
 import DateField from '../../../components/DateField';
-
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import HeaderDashboard from '../../Dashboard/HeaderDashboard';
 
 //Notifications
 import { NotificationManager} from 'react-notifications';
@@ -86,20 +85,13 @@ export default function AvisosEdit(props) {
     }
   }
 
-  function navigate(url) {
-    history.push(url);
+  function navigateBack() {
+    history.push("/avisos");
   }
-
 
   return (
         <>
-          <div className="header-container">
-            <h1>Aviso</h1>
-            <ArrowBackIcon
-              className="header-icon"  
-              fontSize="large"
-              onClick={() => navigate("/avisos")}/>
-          </div>
+          <HeaderDashboard title="Aviso" handleBack={navigateBack}/>
           <form className={classes.root} noValidate autoComplete="off" onSubmit={handleNew}>
             <TextField 
               id="tipo-id" 

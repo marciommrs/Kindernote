@@ -2,12 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-
 import TextField from '../../../components/TextField';
 import TextArea from '../../../components/TextArea';
 import Dropzone from '../../../components/Dropzone';
-
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import HeaderDashboard from '../../Dashboard/HeaderDashboard';
 
 //Notifications
 import {NotificationManager} from 'react-notifications';
@@ -86,20 +84,13 @@ export default function ComunicadosEdit(props) {
     }
   }
 
-  function navigate(url) {
-    history.push(url);
+  function navigateBack() {
+    history.push("/comunicados");
   }
-
 
   return (
         <>
-          <div className="header-comunicado">
-            <h1>Comunicado</h1>
-            <ArrowBackIcon
-              className="header-icon"  
-              fontSize="large"
-              onClick={() => navigate("/comunicados")}/>
-          </div>
+           <HeaderDashboard title="Comunicado" handleBack={navigateBack}/>
           <form className={classes.root} noValidate autoComplete="off" onSubmit={handleNewComunicado}>
             <TextField 
               id="title-id" 
@@ -117,7 +108,14 @@ export default function ComunicadosEdit(props) {
             <Dropzone 
               onFileUploaded={setSelectedFile} 
               disabled={readOnly}/>
-            <Button type="submit" className={classes.btn} variant="contained" color="primary">Salvar</Button>
+            <Button 
+              type="submit" 
+              className={classes.btn} 
+              variant="contained" 
+              color="primary"
+              disabled={readOnly}>
+                Salvar
+            </Button>
           </form>
         </>
   );

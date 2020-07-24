@@ -8,8 +8,7 @@ import TextField from '../../../components/TextField';
 import TextArea from '../../../components/TextArea';
 import DateField from '../../../components/DateField';
 import SelectField from '../../../components/SelectField';
-
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import HeaderDashboard from '../../Dashboard/HeaderDashboard';
 
 //Notifications
 import { NotificationManager} from 'react-notifications';
@@ -119,11 +118,11 @@ export default function TarefasEdit(props) {
 
     const data = {
       id: tarefaId,
-      professorId,
-      turmaId,
-      dataTarefa,
-      materiaId,
-      tema,
+      professor_id: professorId,
+      turma_id: turmaId,
+      data: dataTarefa,
+      materia_id: materiaId,
+      tema: tema,
       descricao
     };
 
@@ -141,20 +140,13 @@ export default function TarefasEdit(props) {
     }
   }
 
-  function navigate(url) {
-    history.push(url);
+  function navigateBack() {
+    history.push("/avisos");
   }
-
 
   return (
         <>
-          <div className="header-container">
-            <h1>Tarefa</h1>
-            <ArrowBackIcon
-              className="header-icon"  
-              fontSize="large"
-              onClick={() => navigate("/tarefas")}/>
-          </div>
+           <HeaderDashboard title="Tarefas" handleBack={navigateBack}/>
           <form className={classes.root} noValidate autoComplete="off" onSubmit={handleNew}>
             <SelectField 
               id="professor-id" 
@@ -196,14 +188,18 @@ export default function TarefasEdit(props) {
               value={descricao}
               onChange={e => setDescricao(e.target.value)}
               disabled={readOnly}/>
-            <Button 
-              type="submit" 
-              className={classes.btn} 
-              variant="contained" 
-              color="primary"
-              disabled={readOnly}>
-                Salvar
-            </Button>
+              {!readOnly ?
+                <Button 
+                  type="submit" 
+                  className={classes.btn} 
+                  variant="contained" 
+                  color="primary"
+                  disabled={readOnly}>
+                    Salvar
+                </Button>
+                :
+                null
+              }
           </form>
         </>
   );

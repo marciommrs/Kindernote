@@ -24,7 +24,7 @@ class TarefasController {
         data_str: DateFormater.getFormattedDate(item.data)
       }
     })
-
+    console.log(tarefasFullLoaded);
     return response.json(tarefasFullLoaded);
   }
 
@@ -53,13 +53,12 @@ class TarefasController {
 
     const tarefa = {
       id: ++indice,
-      ...data
-      // professor_id: data.professor_id,
-      // turma_id: data.turma_id,
-      // data: data.data,
-      // materia_id: data.materia_id,
-      // tema: data,
-      // descricao: data.descricao
+      professor_id: Number(data.professor_id),
+      turma_id: Number(data.turma_id),
+      data: new Date(data.data),
+      materia_id: Number(data.materia_id),
+      tema: data.tema,
+      descricao: data.descricao
     };
     tarefas.push(tarefa);
     return response.json(tarefa);
@@ -78,10 +77,10 @@ class TarefasController {
 
     let loaded = tarefas.find(item => item.id == Number(id));
     if (loaded) {
-      loaded.professor_id = professor_id;
-      loaded.turma_id = turma_id;
+      loaded.professor_id = Number(professor_id);
+      loaded.turma_id = Number(turma_id);
       loaded.data = data;
-      loaded.materia_id = materia_id;
+      loaded.materia_id = Number(materia_id);
       loaded.tema = tema;
       return response.json({
         mensagem: "Tarefa alterada com sucesso.",

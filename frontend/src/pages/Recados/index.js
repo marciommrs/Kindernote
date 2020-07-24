@@ -1,9 +1,10 @@
 import React from 'react';
+import HeaderDashboard from '../Dashboard/HeaderDashboard';
 
 import './styles.css';
 
 export default function Recados() {
     return (
-        <h1>Recados</h1>
+        <HeaderDashboard title="Recados"/>
     );
 }

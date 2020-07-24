@@ -16,10 +16,22 @@ import TasksIcon from '@material-ui/icons/CollectionsBookmark';
 import MessageIcon from '@material-ui/icons/QuestionAnswer';
 import ExitIcon from '@material-ui/icons/ExitToApp';
 
+import Badge from '@material-ui/core/Badge';
+import { withStyles } from '@material-ui/core/styles';
+
 import logoImg from '../../assets/user.jpg';
 import iconImg from '../../assets/icon.png';
 
 import './styles.css';
+
+const StyledBadge = withStyles((theme) => ({
+    badge: {
+      right: -2,
+      top: 5,
+      border: `2px solid ${theme.palette.background.paper}`,
+      padding: '0 4px',
+    },
+  }))(Badge);
 
 export default function Sidebar() {
     const history = useHistory();
@@ -45,7 +57,11 @@ export default function Sidebar() {
                         <ListItemText primary='Perfil' />
                     </ListItem>
                     <ListItem button key='Comunicados' onClick={() => navigate("/comunicados")}>
-                        <ListItemIcon><InfoIcon /></ListItemIcon>
+                        <ListItemIcon>
+                            <StyledBadge badgeContent={2} color="primary">
+                                <InfoIcon />
+                            </StyledBadge>
+                        </ListItemIcon>
                         <ListItemText primary='Comunicados' />
                     </ListItem>
                     <ListItem button key='Avisos' onClick={() => navigate("/avisos")}>
@@ -60,7 +76,7 @@ export default function Sidebar() {
                         <ListItemIcon><MessageIcon /></ListItemIcon>
                         <ListItemText primary='Recados' />
                     </ListItem>
-                    <ListItem button key='Sair'>
+                    <ListItem button key='Sair' onClick={() => navigate("/login")}>
                         <ListItemIcon><ExitIcon /></ListItemIcon>
                         <ListItemText primary='Sair' />
                     </ListItem>

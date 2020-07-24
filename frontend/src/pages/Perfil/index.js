@@ -1,9 +1,10 @@
 import React from 'react';
+import HeaderDashboard from '../Dashboard/HeaderDashboard';
 
 import './styles.css';
 
 export default function Perfil() {
     return (
-        <h1>Perfil</h1>
+      <HeaderDashboard title="Perfil"/>
     );
 }
