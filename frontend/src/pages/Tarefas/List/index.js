@@ -64,7 +64,7 @@ export default function Tarefas() {
 
   return (
         <>
-          <HeaderDashboard title="Comunicados" handleAdd={handleAdd}/>
+          <HeaderDashboard title="Tarefas" handleAdd={handleAdd}/>
           <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="simple table">
               <TableHead>
