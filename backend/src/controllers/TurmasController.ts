@@ -3,7 +3,7 @@ import itens from './samples/turmas';
 
 let indice = 2;
 
-class ProfessoresController {
+class TurmasController {
 
   static findItem(id: number) {
     return itens.find(item => item.id == id);
@@ -52,4 +52,4 @@ class ProfessoresController {
   }
 }
 
-export default ProfessoresController;
+export default TurmasController;
