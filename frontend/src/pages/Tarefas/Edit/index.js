@@ -141,7 +141,7 @@ export default function TarefasEdit(props) {
   }
 
   function navigateBack() {
-    history.push("/avisos");
+    history.push("/tarefas");
   }
 
   return (
