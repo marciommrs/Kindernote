@@ -50,7 +50,7 @@ export default function Sidebar() {
                     <Divider variant="fullWidth" />
                     <ListItem button key='Painel' onClick={() => navigate("/")}>
                         <ListItemIcon><DashboardIcon /></ListItemIcon>
-                        <ListItemText primary='Painel de controle' />
+                        <ListItemText primary='Início' />
                     </ListItem>
                     <ListItem button key='Perfil' onClick={() => navigate("/perfil")}>
                         <ListItemIcon><ProfileIcon /></ListItemIcon>
@@ -58,9 +58,10 @@ export default function Sidebar() {
                     </ListItem>
                     <ListItem button key='Comunicados' onClick={() => navigate("/comunicados")}>
                         <ListItemIcon>
-                            <StyledBadge badgeContent={2} color="primary">
+                            <InfoIcon />
+                            {/* <StyledBadge badgeContent={2} color="primary">
                                 <InfoIcon />
-                            </StyledBadge>
+                            </StyledBadge> */}
                         </ListItemIcon>
                         <ListItemText primary='Comunicados' />
                     </ListItem>
